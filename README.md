@@ -2,7 +2,7 @@
 
 ## ⚡️ Quick Start
 
-npx create-next-app -e https://github.com/colbyfayock/demo-top-music-starter
+npx create-next-app -e https://github.com/Fran-A-Dev/spotify-auth
 
 ```
 
