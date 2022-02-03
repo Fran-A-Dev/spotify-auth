@@ -1,16 +1,20 @@
-import Head from 'next/head';
+import Head from "next/head";
+import { getSecrets } from "@netlify/functions";
 
-import Layout from '@components/Layout';
-import Container from '@components/Container';
+import Layout from "@components/Layout";
+import Container from "@components/Container";
 
-import styles from '@styles/Home.module.scss'
+import styles from "@styles/Home.module.scss";
 
 export default function Home() {
   return (
     <Layout>
       <Head>
         <title>Spotify Re-Wrapped</title>
-        <meta name="description" content="Top artists and tracks for the last whatever period of time..." />
+        <meta
+          name="description"
+          content="Top artists and tracks for the last whatever period of time..."
+        />
       </Head>
 
       <Container>
@@ -22,33 +26,25 @@ export default function Home() {
           <li>
             <a href="https://www.blink182.com/">
               <img width="280" src="/images/blink-182.jpg" alt="Artist Photo" />
-              <p className={styles.itemTitle}>
-                blink-182
-              </p>
+              <p className={styles.itemTitle}>blink-182</p>
             </a>
           </li>
           <li>
             <a href="https://www.blink182.com/">
               <img width="280" src="/images/blink-182.jpg" alt="Artist Photo" />
-              <p className={styles.itemTitle}>
-                blink-182
-              </p>
+              <p className={styles.itemTitle}>blink-182</p>
             </a>
           </li>
           <li>
             <a href="https://www.blink182.com/">
               <img width="280" src="/images/blink-182.jpg" alt="Artist Photo" />
-              <p className={styles.itemTitle}>
-                blink-182
-              </p>
+              <p className={styles.itemTitle}>blink-182</p>
             </a>
           </li>
           <li>
             <a href="https://www.blink182.com/">
               <img width="280" src="/images/blink-182.jpg" alt="Artist Photo" />
-              <p className={styles.itemTitle}>
-                blink-182
-              </p>
+              <p className={styles.itemTitle}>blink-182</p>
             </a>
           </li>
         </ul>
@@ -58,38 +54,54 @@ export default function Home() {
         <ul className={styles.items}>
           <li>
             <a href="https://www.blink182.com/">
-              <img width="280" src="/images/dude-ranch.jpg" alt="Dude Ranch Album Cover" />
-              <p className={styles.itemTitle}>
-                Enthused
-              </p>
+              <img
+                width="280"
+                src="/images/dude-ranch.jpg"
+                alt="Dude Ranch Album Cover"
+              />
+              <p className={styles.itemTitle}>Enthused</p>
             </a>
           </li>
           <li>
             <a href="https://www.blink182.com/">
-              <img width="280" src="/images/dude-ranch.jpg" alt="Dude Ranch Album Cover" />
-              <p className={styles.itemTitle}>
-                Enthused
-              </p>
+              <img
+                width="280"
+                src="/images/dude-ranch.jpg"
+                alt="Dude Ranch Album Cover"
+              />
+              <p className={styles.itemTitle}>Enthused</p>
             </a>
           </li>
           <li>
             <a href="https://www.blink182.com/">
-              <img width="280" src="/images/dude-ranch.jpg" alt="Dude Ranch Album Cover" />
-              <p className={styles.itemTitle}>
-                Enthused
-              </p>
+              <img
+                width="280"
+                src="/images/dude-ranch.jpg"
+                alt="Dude Ranch Album Cover"
+              />
+              <p className={styles.itemTitle}>Enthused</p>
             </a>
           </li>
           <li>
             <a href="https://www.blink182.com/">
-              <img width="280" src="/images/dude-ranch.jpg" alt="Dude Ranch Album Cover" />
-              <p className={styles.itemTitle}>
-                Enthused
-              </p>
+              <img
+                width="280"
+                src="/images/dude-ranch.jpg"
+                alt="Dude Ranch Album Cover"
+              />
+              <p className={styles.itemTitle}>Enthused</p>
             </a>
           </li>
         </ul>
       </Container>
     </Layout>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const secrets = await getSecrets();
+  console.log("secrets.spotify", secrets.spotify);
+  return {
+    props: {},
+  };
 }
